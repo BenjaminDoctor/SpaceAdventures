@@ -28,3 +28,9 @@ D:\Backup\Documents\Visual Studio 2012\Projects\SpaceAdventure\SpaceAdventure\ob
 C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.exe.config
 C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.exe
 C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.pdb
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.exe
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.pdb
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.csprojResolveAssemblyReference.cache
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.Form1.resources
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.Properties.Resources.resources
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.csproj.GenerateResource.Cache

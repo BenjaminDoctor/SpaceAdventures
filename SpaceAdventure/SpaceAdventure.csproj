@@ -77,6 +77,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -94,6 +95,20 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Images\Hero.gif" />
+    <None Include="Images\Hero_Bazooka_1.gif" />
+    <None Include="Images\Hero_Bazooka_2.gif" />
+    <None Include="Images\oryx_16bit_scifi_creatures_67.gif" />
+    <None Include="Images\oryx_16bit_scifi_creatures_68.gif" />
+    <None Include="Images\iss006e40544.jpg" />
+    <None Include="Images\oryx_16bit_scifi_FX_lg_83.png" />
+    <None Include="Images\oryx_16bit_scifi_FX_lg_84.png" />
+    <None Include="Images\oryx_16bit_scifi_FX_sm_151.png" />
+    <None Include="Images\oryx_16bit_scifi_FX_sm_152.png" />
+    <None Include="Images\oryx_16bit_scifi_FX_sm_153.png" />
+    <None Include="Images\oryx_16bit_scifi_FX_sm_154.png" />
+    <None Include="Images\oryx_16bit_scifi_FX_sm_155.png" />
+    <None Include="Images\oryx_16bit_scifi_FX_sm_156.png" />
+    <None Include="Images\oryx_16bit_scifi_FX_sm_157.png" />
     <Content Include="Images\oryx_16bit_scifi_items_111.png" />
     <Content Include="Images\oryx_16bit_scifi_items_112.png" />
     <Content Include="Images\oryx_16bit_scifi_items_113.png" />
@@ -113,6 +128,8 @@
     <Content Include="Images\oryx_16bit_scifi_world_78.png" />
     <Content Include="Images\oryx_16bit_scifi_world_80.png" />
     <Content Include="Images\starBackground.png" />
+    <None Include="Resources\317748__jalastram__sfx-explosion-03.wav" />
+    <Content Include="Sounds\175267__jonccox__gun-plasma.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

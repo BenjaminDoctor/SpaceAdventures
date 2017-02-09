@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Media;
 
 namespace SpaceAdventure
 {
@@ -175,6 +176,8 @@ namespace SpaceAdventure
                     Projectiles.Remove(p);
                     Explosions.Add(new Explosion(new Dictionary<int, string> { { 0, "oryx_16bit_scifi_FX_lg_83.png" }, { 1, "oryx_16bit_scifi_FX_lg_84.png" } },
                         newX, newY));
+                    SoundPlayer sound = new SoundPlayer(SpaceAdventure.Properties.Resources._317748__jalastram__sfx_explosion_03);
+                    sound.Play();
                 }
                 else if (newX > 0 && newX < MAP_WIDTH - 1 && newY > 0 && newY < MAP_HEIGHT - 1
                     && map.Rows[newY].Columns[newX].IsPassable)
@@ -312,6 +315,8 @@ namespace SpaceAdventure
         public void ActorFire()
         {
             Projectiles.Add(new Projectile("oryx_16bit_scifi_FX_sm_151.png",hero.X, hero.Y, 1, 0));
+            SoundPlayer sound = new SoundPlayer(SpaceAdventure.Properties.Resources._175267__jonccox__gun_plasma);
+            sound.Play();
         }
 
         public void MoveActor(object direction)
