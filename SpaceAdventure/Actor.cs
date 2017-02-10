@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,17 +19,26 @@ namespace SpaceAdventure
         public List<ItemNames> Inventory;
 
         private int imageNumber;
-        protected IDictionary<int,string> image;
+        //protected IDictionary<int,string> image;
 
-        public string ActorImage
+        protected ISpriteImage sprite;
+
+        public Bitmap ActorImage
         {
             get
             {
                 imageNumber = (imageNumber % 2);
-                string value = image[imageNumber];
+                Bitmap value = sprite.Images[imageNumber];
+                
+
+                if (!FacingLeft)
+                {
+                    value.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                }
+
                 imageNumber++;
+
                 return value;
-                //return string.Format($"{Name}_{Equiped}_{imageNumber}.gif");
             }
         }
 
@@ -38,10 +48,10 @@ namespace SpaceAdventure
             imageNumber = 1;
         }
 
-        public Actor(IDictionary<int, string> images)
+        public Actor(ISpriteImage images)
             :this()
         {
-            image = images;
+            sprite = images;
         }
 
         public void EquipItem(ItemNames item)

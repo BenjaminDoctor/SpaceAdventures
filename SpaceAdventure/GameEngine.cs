@@ -47,8 +47,8 @@ namespace SpaceAdventure
         {
             StatusMessage = "Nothing to say";
             
-            hero = new Actor(new Dictionary<int, string> { {0, "Hero_Bazooka_1.gif" }, { 1, "Hero_Bazooka_2.gif" } });
-            NPC badguy = new NPC(new Dictionary<int, string> { { 0, "oryx_16bit_scifi_creatures_67.gif" }, { 1, "oryx_16bit_scifi_creatures_68.gif" } });
+            hero = new Actor(new CharacterSprite(0, 0));
+            NPC badguy = new NPC(new CharacterSprite(2, 0));
             Projectiles = new List<Projectile>();
             Explosions = new List<Explosion>();
 
@@ -133,8 +133,16 @@ namespace SpaceAdventure
                     if (path.Count > 1)
                     {
                         Point p = path.First(t => t.X != n.X || t.Y != n.Y);
-                        if (p.X < n.X) n.FacingLeft = true;
-                        if (p.X > n.X) n.FacingLeft = false;
+
+                        if (p.X < n.X)
+                        {
+                            n.FacingLeft = true;
+                        }
+                        else
+                        {
+                            n.FacingLeft = false;
+                        }
+                                                
                         n.SetPosition(p.X, p.Y);                        
                     }
                     else
@@ -225,18 +233,6 @@ namespace SpaceAdventure
                     {
                         Tile t = TileList.Tiles[tile];
                         DrawGraphic(ref graphic, t.TileImage, r, c);
-                        #region Obsolete
-                        //string fileName = string.Concat(ImageDirectory, t.TileImage);
-                        //Image image = Image.FromFile(fileName);
-
-                        //int offset = (ScreenWidth - (MAP_WIDTH * CELL_WIDTH)) / 2;
-                        //Point ulCorner = new Point(c * CELL_WIDTH + offset, r * CELL_HEIGHT);
-
-                        //int xPosition = c * CELL_WIDTH;
-                        //int yPosition = r * CELL_HEIGHT;
-
-                        //graphic.DrawImage(image, ulCorner);
-                        #endregion
                     }
 
                     if (mc.Inventory != ItemNames.Empty  )
@@ -252,11 +248,7 @@ namespace SpaceAdventure
         {
             foreach (Actor a in actors)
             {
-                Image image = Image.FromFile(string.Concat(ImageDirectory, a.ActorImage));
-                if (!a.FacingLeft)
-                {
-                    image.RotateFlip(RotateFlipType.RotateNoneFlipX);
-                }
+                Image image = a.ActorImage;                
 
                 int offset = (ScreenWidth - (MAP_WIDTH * CELL_WIDTH)) / 2;
                 graphic.DrawImage(image, new Point(XUnit(a.X) + offset, YUnit(a.Y)));
@@ -264,11 +256,7 @@ namespace SpaceAdventure
 
             foreach (NPC n in npc)
             {
-                Image image = Image.FromFile(string.Concat(ImageDirectory, n.ActorImage));
-                if (!n.FacingLeft)
-                {
-                    image.RotateFlip(RotateFlipType.RotateNoneFlipX);
-                }
+                Image image = n.ActorImage;
 
                 int offset = (ScreenWidth - (MAP_WIDTH * CELL_WIDTH)) / 2;
                 graphic.DrawImage(image, new Point(XUnit(n.X) + offset, YUnit(n.Y)));

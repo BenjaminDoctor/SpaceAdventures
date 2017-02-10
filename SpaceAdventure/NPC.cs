@@ -13,9 +13,14 @@ namespace SpaceAdventure
         public Point Goal {get;set;}
         public int Delay = 2;
 
-        public NPC(IDictionary<int, string> images)
+        //public NPC(IDictionary<int, string> images)
+        //{
+        //    base.image = images;
+        //}
+
+        public NPC(ISpriteImage images)
         {
-            base.image = images;
+            base.sprite = images;
         }
 
         public void SetPosition(int x, int y)

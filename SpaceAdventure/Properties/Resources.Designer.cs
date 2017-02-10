@@ -81,6 +81,46 @@ namespace SpaceAdventure.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Creatures {
+            get {
+                object obj = ResourceManager.GetObject("Creatures", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Creatures_Extra {
+            get {
+                object obj = ResourceManager.GetObject("Creatures_Extra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FX_Large {
+            get {
+                object obj = ResourceManager.GetObject("FX_Large", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FX_Small {
+            get {
+                object obj = ResourceManager.GetObject("FX_Small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hero_Bazooka_1 {
             get {
                 object obj = ResourceManager.GetObject("Hero_Bazooka_1", resourceCulture);
@@ -104,6 +144,16 @@ namespace SpaceAdventure.Properties {
         internal static System.Drawing.Bitmap iss006e40544 {
             get {
                 object obj = ResourceManager.GetObject("iss006e40544", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Items {
+            get {
+                object obj = ResourceManager.GetObject("Items", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -214,6 +264,16 @@ namespace SpaceAdventure.Properties {
         internal static System.Drawing.Bitmap oryx_16bit_scifi_FX_sm_157 {
             get {
                 object obj = ResourceManager.GetObject("oryx_16bit_scifi_FX_sm_157", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap World {
+            get {
+                object obj = ResourceManager.GetObject("World", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
