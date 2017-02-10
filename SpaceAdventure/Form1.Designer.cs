@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnFire = new System.Windows.Forms.Button();
             this.lbInventory = new System.Windows.Forms.ListBox();
             this.lblMessage = new System.Windows.Forms.Label();
             this.btnLeft = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.btnRight = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
-            this.btnFire = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,15 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // btnFire
+            // 
+            this.btnFire.Location = new System.Drawing.Point(531, 257);
+            this.btnFire.Name = "btnFire";
+            this.btnFire.Size = new System.Drawing.Size(75, 23);
+            this.btnFire.TabIndex = 9;
+            this.btnFire.Text = "Fire";
+            this.btnFire.UseVisualStyleBackColor = true;
             // 
             // lbInventory
             // 
@@ -123,15 +132,6 @@
             this.btnUp.Text = "Up";
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
-            // 
-            // btnFire
-            // 
-            this.btnFire.Location = new System.Drawing.Point(531, 257);
-            this.btnFire.Name = "btnFire";
-            this.btnFire.Size = new System.Drawing.Size(75, 23);
-            this.btnFire.TabIndex = 9;
-            this.btnFire.Text = "Fire";
-            this.btnFire.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
