@@ -17,7 +17,6 @@ namespace SpaceAdventure.Sprite
         private Bitmap spriteSheet = Properties.Resources.FX_Large;
         private static int SquareSize = 32;
 
-        //TODO: Label column and row correctly
         public EffectsLargeSprite(int row, int column)
         {
             Images = new Dictionary<int, Bitmap>();

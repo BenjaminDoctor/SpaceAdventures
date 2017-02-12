@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Media;
 
 using SpaceAdventure.Sprite;
+using SpaceAdventure.Common;
 
 namespace SpaceAdventure
 {
