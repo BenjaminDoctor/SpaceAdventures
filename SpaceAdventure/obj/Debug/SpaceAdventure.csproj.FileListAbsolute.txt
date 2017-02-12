@@ -33,3 +33,4 @@ C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdve
 C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.csproj.GenerateResource.Cache
 C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.exe
 C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.pdb
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.csprojResolveAssemblyReference.cache

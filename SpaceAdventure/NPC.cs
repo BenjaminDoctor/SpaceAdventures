@@ -27,6 +27,11 @@ namespace SpaceAdventure
         {
             base.X = x;
             base.Y = y;
+        }
+
+        public void Update()
+        {
+
         }        
     }
 }

@@ -47,7 +47,7 @@ namespace SpaceAdventure
         {
             StatusMessage = "Nothing to say";
             
-            hero = new Actor(new CharacterSprite(0, 0));
+            hero = new Actor(new CharacterSprite(10, 1));
             NPC badguy = new NPC(new CharacterSprite(2, 0));
             Projectiles = new List<Projectile>();
             Explosions = new List<Explosion>();
@@ -142,7 +142,7 @@ namespace SpaceAdventure
                         {
                             n.FacingLeft = false;
                         }
-                                                
+
                         n.SetPosition(p.X, p.Y);                        
                     }
                     else
