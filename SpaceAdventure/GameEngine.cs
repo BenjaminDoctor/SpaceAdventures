@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Media;
 
+using SpaceAdventure.Sprite;
+
 namespace SpaceAdventure
 {
     public class GameEngine
@@ -42,13 +44,13 @@ namespace SpaceAdventure
         {
             StatusMessage = "Nothing to say";
             
-            hero = new Actor(new CharacterSprite(10, 1),new Point(1,8));
+            hero = new Actor(new CharacterSprite(1,2),new Point(1,8));
             hero.FacingLeft = true;
             hero.Inventory.Add(ItemNames.Bazooka);
             hero.EquipItem(ItemNames.Bazooka);
             actors.Add(hero);
 
-            NPC badguy = new NPC(new CharacterSprite(2, 0),new Point(10,8));
+            NPC badguy = new NPC(new CharacterSprite(0, 0),new Point(10,8));
             badguy.FacingLeft = false;
             badguy.Inventory.Add(ItemNames.Rifle);
             badguy.EquipItem(ItemNames.Rifle);
@@ -132,7 +134,7 @@ namespace SpaceAdventure
                 {
                     StatusMessage = "Blowup";
                     Projectiles.Remove(p);
-                    Explosions.Add(new Explosion(new EffectsLargeSprite(2,10), newPosition));
+                    Explosions.Add(new Explosion(new EffectsLargeSprite(10,2), newPosition));
                     SoundPlayer sound = new SoundPlayer(SpaceAdventure.Properties.Resources._317748__jalastram__sfx_explosion_03);
                     sound.Play();
                 }

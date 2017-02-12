@@ -1,0 +1,7 @@
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Abstractions\bin\Debug\SpaceAdventure.Abstractions.dll
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Abstractions\bin\Debug\SpaceAdventure.Abstractions.pdb
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Abstractions\bin\Debug\SpaceAdventure.Common.dll
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Abstractions\bin\Debug\SpaceAdventure.Common.pdb
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Abstractions\obj\Debug\SpaceAdventure.Abstractions.csprojResolveAssemblyReference.cache
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Abstractions\obj\Debug\SpaceAdventure.Abstractions.dll
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Abstractions\obj\Debug\SpaceAdventure.Abstractions.pdb

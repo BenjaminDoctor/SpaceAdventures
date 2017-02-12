@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceAdventure
+namespace SpaceAdventure.Abstractions
 {
-    public interface IDistanceCalculator
+    public interface ISpriteImage
     {
-        int DistanceBetween(Point current, Point goal);
+        IDictionary<int, Bitmap> Images { get; set; }
     }
 }

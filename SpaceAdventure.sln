@@ -1,7 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Windows Desktop
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceAdventure", "SpaceAdventure\SpaceAdventure.csproj", "{6B0EF0F6-5F12-4FD7-8AF7-8B1D1BBDBE23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceAdventure.Sprite", "SpaceAdventure.Sprite\SpaceAdventure.Sprite.csproj", "{35982F8F-BF69-4608-812C-29A2E074DB16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceAdventure.Abstractions", "SpaceAdventure.Abstractions\SpaceAdventure.Abstractions.csproj", "{B70B8FBA-3122-431D-A8EF-CB47B2BB8004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceAdventure.Common", "SpaceAdventure.Common\SpaceAdventure.Common.csproj", "{A3578508-FDEB-4427-BCE6-D0733D4DCB45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +21,18 @@ Global
 		{6B0EF0F6-5F12-4FD7-8AF7-8B1D1BBDBE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B0EF0F6-5F12-4FD7-8AF7-8B1D1BBDBE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B0EF0F6-5F12-4FD7-8AF7-8B1D1BBDBE23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35982F8F-BF69-4608-812C-29A2E074DB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35982F8F-BF69-4608-812C-29A2E074DB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35982F8F-BF69-4608-812C-29A2E074DB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35982F8F-BF69-4608-812C-29A2E074DB16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B70B8FBA-3122-431D-A8EF-CB47B2BB8004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B70B8FBA-3122-431D-A8EF-CB47B2BB8004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B70B8FBA-3122-431D-A8EF-CB47B2BB8004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B70B8FBA-3122-431D-A8EF-CB47B2BB8004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3578508-FDEB-4427-BCE6-D0733D4DCB45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3578508-FDEB-4427-BCE6-D0733D4DCB45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3578508-FDEB-4427-BCE6-D0733D4DCB45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3578508-FDEB-4427-BCE6-D0733D4DCB45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

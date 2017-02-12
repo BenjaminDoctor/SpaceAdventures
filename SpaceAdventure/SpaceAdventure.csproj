@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SpaceAdventure</RootNamespace>
     <AssemblyName>SpaceAdventure</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,10 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actor.cs" />
-    <Compile Include="CharacterSprite.cs" />
     <Compile Include="Compass.cs" />
     <Compile Include="DistanceCalculator.cs" />
-    <Compile Include="EffectsLargeSprite.cs" />
     <Compile Include="Explosion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -57,8 +56,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GameEngine.cs" />
-    <Compile Include="Abstractions\IDistanceCalculator.cs" />
-    <Compile Include="Abstractions\ISpriteImage.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="MapCell.cs" />
     <Compile Include="MapRow.cs" />
@@ -97,7 +94,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SpaceAdventure.Abstractions\SpaceAdventure.Abstractions.csproj">
+      <Project>{b70b8fba-3122-431d-a8ef-cb47b2bb8004}</Project>
+      <Name>SpaceAdventure.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpaceAdventure.Common\SpaceAdventure.Common.csproj">
+      <Project>{a3578508-fdeb-4427-bce6-d0733d4dcb45}</Project>
+      <Name>SpaceAdventure.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpaceAdventure.Sprite\SpaceAdventure.Sprite.csproj">
+      <Project>{35982f8f-bf69-4608-812c-29a2e074db16}</Project>
+      <Name>SpaceAdventure.Sprite</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Hero.gif" />
     <None Include="Images\Hero_Bazooka_1.gif" />

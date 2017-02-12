@@ -25,12 +25,18 @@ D:\Backup\Documents\Visual Studio 2012\Projects\SpaceAdventure\SpaceAdventure\ob
 D:\Backup\Documents\Visual Studio 2012\Projects\SpaceAdventure\SpaceAdventure\obj\Debug\SpaceAdventure.Form1.resources
 D:\Backup\Documents\Visual Studio 2012\Projects\SpaceAdventure\SpaceAdventure\obj\Debug\SpaceAdventure.Properties.Resources.resources
 D:\Backup\Documents\Visual Studio 2012\Projects\SpaceAdventure\SpaceAdventure\obj\Debug\SpaceAdventure.csproj.GenerateResource.Cache
-C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.exe.config
-C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.exe
-C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.pdb
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.csprojResolveAssemblyReference.cache
 C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.Form1.resources
 C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.Properties.Resources.resources
 C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.csproj.GenerateResource.Cache
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.exe.config
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.exe
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.pdb
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.Abstractions.dll
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.Common.dll
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.Sprite.dll
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.Abstractions.pdb
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.Common.pdb
+C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\bin\Debug\SpaceAdventure.Sprite.pdb
 C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.exe
 C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.pdb
-C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure\obj\Debug\SpaceAdventure.csprojResolveAssemblyReference.cache
