@@ -48,6 +48,7 @@
     <Compile Include="CharacterSprite.cs" />
     <Compile Include="Compass.cs" />
     <Compile Include="DistanceCalculator.cs" />
+    <Compile Include="EffectsLargeSprite.cs" />
     <Compile Include="Explosion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -42,7 +42,7 @@ namespace SpaceAdventure
         {
             StatusMessage = "Nothing to say";
             
-            hero = new Actor(new CharacterSprite(10, 1),new Point(1,1));
+            hero = new Actor(new CharacterSprite(10, 1),new Point(1,8));
             hero.FacingLeft = true;
             hero.Inventory.Add(ItemNames.Bazooka);
             hero.EquipItem(ItemNames.Bazooka);
@@ -132,8 +132,7 @@ namespace SpaceAdventure
                 {
                     StatusMessage = "Blowup";
                     Projectiles.Remove(p);
-                    Explosions.Add(new Explosion(new Dictionary<int, string> { { 0, "oryx_16bit_scifi_FX_lg_83.png" }, { 1, "oryx_16bit_scifi_FX_lg_84.png" } },
-                        newPosition));
+                    Explosions.Add(new Explosion(new EffectsLargeSprite(2,10), newPosition));
                     SoundPlayer sound = new SoundPlayer(SpaceAdventure.Properties.Resources._317748__jalastram__sfx_explosion_03);
                     sound.Play();
                 }
@@ -157,7 +156,7 @@ namespace SpaceAdventure
 
             foreach (var e in Explosions)
             {
-                Image image = Image.FromFile(string.Concat(ImageDirectory, e.ExplosionImage));
+                Image image = e.ExplosionImage;
                 DrawImage(ref graphic, image, e.Position);
 
                 if (e.Counter == 0) removals.Add(e);

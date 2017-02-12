@@ -14,24 +14,24 @@ namespace SpaceAdventure
 
         private int imageNumber;
         protected IDictionary<int, string> image;
+        protected ISpriteImage images;
 
-        public string ExplosionImage
+        public Bitmap ExplosionImage
         {
             get
             {
                 imageNumber = (imageNumber % 2);
-                string value = image[imageNumber];
+                var value = images.Images[imageNumber];
                 imageNumber++;
                 Counter--;
                 return value;
-                //return string.Format($"{Name}_{Equiped}_{imageNumber}.gif");
             }
         }
 
-        public Explosion(IDictionary<int, string> images, Point position)
+        public Explosion(ISpriteImage images, Point position)
         {
-            image = images;
             Position = position;
+            this.images = images;
             Counter = 6;
         }
     }
