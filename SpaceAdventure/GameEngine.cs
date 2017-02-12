@@ -32,11 +32,6 @@ namespace SpaceAdventure
         List<Projectile> Projectiles;
         IList<Explosion> Explosions;
 
-#region Obsolete
-        //static Dictionary<TileNames, Tile> Tiles;
-        //Tuple<Image, int, int, int, int> Projectile;
-        #endregion
-
         public GameEngine()
         {
             Init();
@@ -67,21 +62,6 @@ namespace SpaceAdventure
         private void CreateMap()
         {
             map = new TileMap(MAP_WIDTH,MAP_HEIGHT );
-#region Obsolete
-            //map = new int[MAP_HEIGHT][] {
-            //new int[MAP_WIDTH]{ 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4},
-            //new int[MAP_WIDTH]{ 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-            //new int[MAP_WIDTH]{ 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-            //new int[MAP_WIDTH]{ 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-            //new int[MAP_WIDTH]{ 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-            //new int[MAP_WIDTH]{ 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-            //new int[MAP_WIDTH]{ 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-            //new int[MAP_WIDTH]{ 5, 1, 1, 1, 1, 1, 1, 1, 1, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 6},
-            //new int[MAP_WIDTH]{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            //new int[MAP_WIDTH]{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            //new int[MAP_WIDTH]{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            //new int[MAP_WIDTH]{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}}; 
-            #endregion
         }
 
         public void GameLoop(ref Graphics graphic)
@@ -243,18 +223,6 @@ namespace SpaceAdventure
 
             if (map.ValidPoint(newX,newY))
             {
-#region Obsolete
-                //bool passable = true;
-
-                //foreach (TileNames t in map.Rows[newY].Columns[newX].Tiles)
-                //{
-                //    if (!TileList.Tiles[t].IsPassable)
-                //    {
-                //        passable = false;
-                //        break;
-                //    }
-                //}
-                #endregion
                 if ( map.Rows[newY].Columns[newX].IsPassable)
                 {
                     hero.Position = new Point(newX,newY);
