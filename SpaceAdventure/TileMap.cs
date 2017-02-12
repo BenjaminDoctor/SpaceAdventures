@@ -547,7 +547,7 @@ namespace SpaceAdventure
         { 
             bool value = false;
 
-            if (newX > 0 && newX < MapWidth  && newY > 0 && newY < MapHeight)
+            if (newX >= 0 && newX < MapWidth  && newY >= 0 && newY < MapHeight)
             {
                 value = true;
             }

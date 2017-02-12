@@ -127,8 +127,6 @@ namespace SpaceAdventure
             {
                 Projectile p = Projectiles[i];
                 Point newPosition = Point.Add(p.Position, p.Velosity);
-                //int newX = p.XPosition  + p.XVelosity;
-                //int newY = p.YPosition + p.YVelosity;
 
                 if (npc.Any(x => x.Position == newPosition))
                 {
