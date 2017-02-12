@@ -72,7 +72,6 @@ namespace SpaceAdventure
             {
                 if (CheckInputs())
                 {
-
                     Update();
                 }
 
@@ -127,24 +126,24 @@ namespace SpaceAdventure
             while (i < Projectiles.Count())
             {
                 Projectile p = Projectiles[i];
-                int newX = p.XPosition  + p.XVelosity;
-                int newY = p.YPosition + p.YVelosity;
+                Point newPosition = Point.Add(p.Position, p.Velosity);
+                //int newX = p.XPosition  + p.XVelosity;
+                //int newY = p.YPosition + p.YVelosity;
 
-                if (npc.Any(x => x.Position.X == newX && x.Position.Y == newY))
+                if (npc.Any(x => x.Position == newPosition))
                 {
                     StatusMessage = "Blowup";
                     Projectiles.Remove(p);
                     Explosions.Add(new Explosion(new Dictionary<int, string> { { 0, "oryx_16bit_scifi_FX_lg_83.png" }, { 1, "oryx_16bit_scifi_FX_lg_84.png" } },
-                        new Point(newX,newY)));
+                        newPosition));
                     SoundPlayer sound = new SoundPlayer(SpaceAdventure.Properties.Resources._317748__jalastram__sfx_explosion_03);
                     sound.Play();
                 }
-                else if (newX > 0 && newX < MAP_WIDTH - 1 && newY > 0 && newY < MAP_HEIGHT - 1
-                    && map.Rows[newY].Columns[newX].IsPassable)
+                else if (newPosition.X > 0 && newPosition.X < MAP_WIDTH - 1 && newPosition.Y > 0 && newPosition.Y < MAP_HEIGHT - 1
+                    && map.Rows[newPosition.Y].Columns[newPosition.X].IsPassable)
                 {
-                    p.XPosition = newX;
-                    p.YPosition = newY;
-                    DrawGraphic(ref graphic, p.ImageFile, p.YPosition, p.XPosition);
+                    p.Position = newPosition;
+                    DrawGraphic(ref graphic, p.ImageFile, p.Position.Y, p.Position.X);
                 }
                 else
                 {
@@ -242,7 +241,7 @@ namespace SpaceAdventure
 
         public void ActorFire()
         {
-            Projectiles.Add(new Projectile("oryx_16bit_scifi_FX_sm_151.png",hero.Position.X, hero.Position.Y, 1, 0));
+            Projectiles.Add(new Projectile("oryx_16bit_scifi_FX_sm_151.png",hero.Position, new Size( 1, 0)));
             SoundPlayer sound = new SoundPlayer(SpaceAdventure.Properties.Resources._175267__jonccox__gun_plasma);
             sound.Play();
         }
