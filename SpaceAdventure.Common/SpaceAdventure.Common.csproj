@@ -40,12 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterType.cs" />
     <Compile Include="Facing.cs" />
     <Compile Include="ItemNames.cs" />
     <Compile Include="TileNames.cs" />
     <Compile Include="WeaponType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpriteType.cs" />
+    <Compile Include="CharacterState.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

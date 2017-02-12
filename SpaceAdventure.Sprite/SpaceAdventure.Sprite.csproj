@@ -49,7 +49,7 @@
     <Compile Include="CharacterSprite.cs" />
     <Compile Include="EffectsLargeSprite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpriteFactory.cs" />
+    <Compile Include="FullRowCharacterFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SpaceAdventure.Abstractions\SpaceAdventure.Abstractions.csproj">

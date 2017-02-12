@@ -9,6 +9,7 @@ namespace SpaceAdventure.Abstractions
 {
     public interface ISpriteFactory
     {
-        ISpriteImage Get(SpriteType sprite);
+        ISpriteImage Get(CharacterType sprite, CharacterState state);
+        ISpriteImage Get(CharacterType sprite, ItemNames item);
     }
 }

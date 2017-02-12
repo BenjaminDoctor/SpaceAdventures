@@ -9,6 +9,7 @@ using System.Media;
 
 using SpaceAdventure.Sprite;
 using SpaceAdventure.Common;
+using SpaceAdventure.Abstractions;
 
 namespace SpaceAdventure
 {
@@ -45,16 +46,14 @@ namespace SpaceAdventure
         {
             StatusMessage = "Nothing to say";
             
-            hero = new Actor(new CharacterSprite(1,2),new Point(1,8));
+            hero = new Actor(CharacterType.BlackArmorBlackHelmet, ItemNames.BlueSword, new Point(1, 8));
             hero.FacingLeft = true;
             hero.Inventory.Add(ItemNames.Bazooka);
-            hero.EquipItem(ItemNames.Bazooka);
             actors.Add(hero);
 
-            NPC badguy = new NPC(new CharacterSprite(0, 0),new Point(10,8));
+            NPC badguy = new NPC(CharacterType.GreenArmorBrownVisor, ItemNames.Flamethrower, new Point(10,8));
             badguy.FacingLeft = false;
             badguy.Inventory.Add(ItemNames.Rifle);
-            badguy.EquipItem(ItemNames.Rifle);
             badguy.Goal = hero.Position;
             npc.Add(badguy);
 

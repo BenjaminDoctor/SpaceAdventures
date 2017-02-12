@@ -13,8 +13,15 @@ namespace SpaceAdventure.Common
         Pistol,
         Shotgun,
         Rifle,
-        MachineGun,
+        SubMachineGun,
         RocketLauncher,
-        Bazooka
+        Bazooka,
+        Flamethrower,
+        RedFlag,
+        BlueFlag,
+        GreenFlag,
+        RedSword,
+        BlueSword,
+        Shield
     }
 }

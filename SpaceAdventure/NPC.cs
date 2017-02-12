@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 using SpaceAdventure.Abstractions;
+using SpaceAdventure.Common;
 
 namespace SpaceAdventure
 {
@@ -17,6 +18,17 @@ namespace SpaceAdventure
         public int Delay = 2;
 
         private DistanceCalculator calculator;
+
+        public NPC()
+        {
+            calculator = new DistanceCalculator();
+        }
+
+        public NPC(CharacterType character, ItemNames equipedItem, Point startingPosition)
+            : base(character, equipedItem, startingPosition)
+        {
+            calculator = new DistanceCalculator();
+        }
 
         public NPC(ISpriteImage images,Point startingPosition) : base(images,startingPosition)
         {

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 using SpaceAdventure.Abstractions;
 using SpaceAdventure.Common;
+using SpaceAdventure.Sprite;
 
 namespace SpaceAdventure
 {
@@ -18,8 +19,11 @@ namespace SpaceAdventure
         public bool FacingLeft { get; set; }        
         public Facing Direction { get; set; }
         public ItemNames Equiped { get; set; }
+        public CharacterType Character { get; private set; }
+
         public List<ItemNames> Inventory;
 
+        private ISpriteFactory characterFactory = new FullRowCharacterFactory();
         private int imageNumber;
         protected Point startPosition;
 
@@ -42,6 +46,13 @@ namespace SpaceAdventure
             Inventory = new List<ItemNames>();     
             imageNumber = 1;
             
+        }
+
+        public Actor(CharacterType character, ItemNames equipedItem, Point startingPosition) 
+            : this()
+        {
+            sprite = characterFactory.Get(character, equipedItem);
+            this.Position = startingPosition;
         }
 
         public Actor(ISpriteImage images,Point startingPosition)

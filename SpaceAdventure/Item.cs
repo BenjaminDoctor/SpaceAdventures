@@ -29,7 +29,7 @@ namespace SpaceAdventure
             Items.Add(ItemNames.Sword, new Item("oryx_16bit_scifi_items_114.png", true));
             Items.Add(ItemNames.Pistol, new Item("oryx_16bit_scifi_items_113.png", true));
             Items.Add(ItemNames.Rifle, new Item("oryx_16bit_scifi_items_111.png", true));
-            Items.Add(ItemNames.MachineGun, new Item("oryx_16bit_scifi_items_117.png", true));
+            Items.Add(ItemNames.SubMachineGun, new Item("oryx_16bit_scifi_items_117.png", true));
             Items.Add(ItemNames.Shotgun, new Item("oryx_16bit_scifi_items_112.png", true));
             Items.Add(ItemNames.Bazooka, new Item("oryx_16bit_scifi_items_115.png", true));
             Items.Add(ItemNames.RocketLauncher, new Item("oryx_16bit_scifi_items_116.png", true));
