@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
+using SpaceAdventure.Common;
+
 namespace SpaceAdventure
 {
     class TileRoom
