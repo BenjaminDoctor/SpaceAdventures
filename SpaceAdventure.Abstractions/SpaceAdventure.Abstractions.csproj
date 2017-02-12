@@ -44,6 +44,7 @@
     <Compile Include="IDistanceCalculator.cs" />
     <Compile Include="ISpriteFactory.cs" />
     <Compile Include="ISpriteImage.cs" />
+    <Compile Include="IWeapon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

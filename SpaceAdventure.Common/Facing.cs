@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace SpaceAdventure.Common
 {
-    public enum Facing
+    public enum Direction
     {
         Left,
         Right,
         Up,
-        Down
+        Down,
+        UpRight,
+        UpLeft,
+        DownRight,
+        DownLeft
     }
 }
