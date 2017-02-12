@@ -14,9 +14,11 @@ namespace SpaceAdventure
         public Point Goal {get;set;}
         public int Delay = 2;
 
+        private DistanceCalculator calculator;
+
         public NPC(ISpriteImage images,Point startingPosition) : base(images,startingPosition)
         {
-            
+            calculator = new DistanceCalculator();
         }
 
         public void SetPosition(int x, int y)
@@ -24,9 +26,32 @@ namespace SpaceAdventure
             base.Position = new Point(x, y);
         }
 
-        public void Update()
+        public void Update(Point heroPosition, Func<Point,Point,List<Point>>PathFind)
         {
+            if (calculator.DistanceBetween(Position,heroPosition) > 3)
+            {
+                List<Point> path = PathFind(Position, heroPosition);
 
+                if (path.Count > 1)
+                {
+                    Point p = path.First(t => t.X != Position.X || t.Y != Position.Y);
+
+                    if (p.X < Position.X)
+                    {
+                        FacingLeft = true;
+                    }
+                    else
+                    {
+                        FacingLeft = false;
+                    }
+
+                    SetPosition(p.X, p.Y);
+                }
+                else
+                {
+                    SetPosition(Position.X, Position.Y);
+                }
+            }
         }        
     }
 }

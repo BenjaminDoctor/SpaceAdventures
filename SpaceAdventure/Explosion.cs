@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,7 @@ namespace SpaceAdventure
 {
     class Explosion
     {
-        public int XPosition { get; set; }
-        public int YPosition { get; set; }
+        public Point Position { get; set; }
         public int Counter { get; private set; }
 
         private int imageNumber;
@@ -28,11 +28,10 @@ namespace SpaceAdventure
             }
         }
 
-        public Explosion(IDictionary<int, string> images, int xPosition, int yPosition)
+        public Explosion(IDictionary<int, string> images, Point position)
         {
             image = images;
-            XPosition = xPosition;
-            YPosition = yPosition;
+            Position = position;
             Counter = 6;
         }
     }

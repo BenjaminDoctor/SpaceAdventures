@@ -48,23 +48,20 @@ namespace SpaceAdventure
             StatusMessage = "Nothing to say";
             
             hero = new Actor(new CharacterSprite(10, 1),new Point(1,1));
-            NPC badguy = new NPC(new CharacterSprite(2, 0),new Point(10,8));
-            Projectiles = new List<Projectile>();
-            Explosions = new List<Explosion>();
-
             hero.FacingLeft = true;
             hero.Inventory.Add(ItemNames.Bazooka);
             hero.EquipItem(ItemNames.Bazooka);
             actors.Add(hero);
 
-            //badguy.X = 10;
-            //badguy.Y = 8;
+            NPC badguy = new NPC(new CharacterSprite(2, 0),new Point(10,8));
             badguy.FacingLeft = false;
-            badguy.Inventory.Add(ItemNames.Rifle );
+            badguy.Inventory.Add(ItemNames.Rifle);
             badguy.EquipItem(ItemNames.Rifle);
             badguy.Goal = hero.Position;
             npc.Add(badguy);
-            
+
+            Projectiles = new List<Projectile>();
+            Explosions = new List<Explosion>();
         }
 
         private void CreateMap()
@@ -124,30 +121,7 @@ namespace SpaceAdventure
         {
             foreach (NPC n in npc)
             {
-                if (map.DistanceBetweenPoints(n.Position.X, n.Position.Y, hero.Position.X, hero.Position.Y) > 3)
-                {
-                    List<Point> path = map.PathFind(new Point(n.Position.X, n.Position.Y), new Point(hero.Position.X, hero.Position.Y));
-
-                    if (path.Count > 1)
-                    {
-                        Point p = path.First(t => t.X != n.Position.X || t.Y != n.Position.Y);
-
-                        if (p.X < n.Position.X)
-                        {
-                            n.FacingLeft = true;
-                        }
-                        else
-                        {
-                            n.FacingLeft = false;
-                        }
-
-                        n.SetPosition(p.X, p.Y);                        
-                    }
-                    else
-                    {
-                        n.SetPosition(n.Position.X, n.Position.Y);
-                    }
-                }
+                n.Update(hero.Position, map.PathFind);
             }
         }
 
@@ -181,7 +155,7 @@ namespace SpaceAdventure
                     StatusMessage = "Blowup";
                     Projectiles.Remove(p);
                     Explosions.Add(new Explosion(new Dictionary<int, string> { { 0, "oryx_16bit_scifi_FX_lg_83.png" }, { 1, "oryx_16bit_scifi_FX_lg_84.png" } },
-                        newX, newY));
+                        new Point(newX,newY)));
                     SoundPlayer sound = new SoundPlayer(SpaceAdventure.Properties.Resources._317748__jalastram__sfx_explosion_03);
                     sound.Play();
                 }
@@ -207,8 +181,7 @@ namespace SpaceAdventure
             foreach (var e in Explosions)
             {
                 Image image = Image.FromFile(string.Concat(ImageDirectory, e.ExplosionImage));
-                int offset = (ScreenWidth - (MAP_WIDTH * CELL_WIDTH)) / 2;
-                graphic.DrawImage(image, new Point(XUnit(e.XPosition) + offset, YUnit(e.YPosition)));
+                DrawImage(ref graphic, image, e.Position);
 
                 if (e.Counter == 0) removals.Add(e);
             }
@@ -246,19 +219,21 @@ namespace SpaceAdventure
         {
             foreach (Actor a in actors)
             {
-                Image image = a.ActorImage;                
-
-                int offset = (ScreenWidth - (MAP_WIDTH * CELL_WIDTH)) / 2;
-                graphic.DrawImage(image, new Point(XUnit(a.Position.X) + offset, YUnit(a.Position.Y)));
+                Image image = a.ActorImage;
+                DrawImage(ref graphic, image, a.Position);
             }
 
             foreach (NPC n in npc)
             {
                 Image image = n.ActorImage;
-
-                int offset = (ScreenWidth - (MAP_WIDTH * CELL_WIDTH)) / 2;
-                graphic.DrawImage(image, new Point(XUnit(n.Position.X) + offset, YUnit(n.Position.Y)));
+                DrawImage(ref graphic, image, n.Position);
             }
+        }
+
+        private void DrawImage(ref Graphics graphic, Image image, Point position)
+        {
+            int offset = (ScreenWidth - (MAP_WIDTH * CELL_WIDTH)) / 2;
+            graphic.DrawImage(image, new Point(XUnit(position.X) + offset, YUnit(position.Y)));
         }
 
         private void DrawPlayer(int xDelta, int yDelta)

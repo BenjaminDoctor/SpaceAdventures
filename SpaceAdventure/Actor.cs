@@ -12,8 +12,6 @@ namespace SpaceAdventure
     {
         public string Name { get; set; }
         public Point Position { get; set; }
-        //public int X { get; set; }
-        //public int Y { get; set; }
         public bool FacingLeft { get; set; }        
         public Facing Direction { get; set; }
         public ItemNames Equiped { get; set; }
