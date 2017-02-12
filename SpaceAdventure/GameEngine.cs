@@ -47,24 +47,22 @@ namespace SpaceAdventure
         {
             StatusMessage = "Nothing to say";
             
-            hero = new Actor(new CharacterSprite(10, 1));
-            NPC badguy = new NPC(new CharacterSprite(2, 0));
+            hero = new Actor(new CharacterSprite(10, 1),new Point(1,1));
+            NPC badguy = new NPC(new CharacterSprite(2, 0),new Point(10,8));
             Projectiles = new List<Projectile>();
             Explosions = new List<Explosion>();
 
-            hero.X = 1;
-            hero.Y = 1;
             hero.FacingLeft = true;
             hero.Inventory.Add(ItemNames.Bazooka);
             hero.EquipItem(ItemNames.Bazooka);
             actors.Add(hero);
 
-            badguy.X = 10;
-            badguy.Y = 8;
+            //badguy.X = 10;
+            //badguy.Y = 8;
             badguy.FacingLeft = false;
             badguy.Inventory.Add(ItemNames.Rifle );
             badguy.EquipItem(ItemNames.Rifle);
-            badguy.Goal = new Point(hero.X, hero.Y);
+            badguy.Goal = hero.Position;
             npc.Add(badguy);
             
         }
@@ -126,15 +124,15 @@ namespace SpaceAdventure
         {
             foreach (NPC n in npc)
             {
-                if (map.DistanceBetweenPoints(n.X, n.Y, hero.X, hero.Y) > 3)
+                if (map.DistanceBetweenPoints(n.Position.X, n.Position.Y, hero.Position.X, hero.Position.Y) > 3)
                 {
-                    List<Point> path = map.PathFind(new Point(n.X, n.Y), new Point(hero.X, hero.Y));
+                    List<Point> path = map.PathFind(new Point(n.Position.X, n.Position.Y), new Point(hero.Position.X, hero.Position.Y));
 
                     if (path.Count > 1)
                     {
-                        Point p = path.First(t => t.X != n.X || t.Y != n.Y);
+                        Point p = path.First(t => t.X != n.Position.X || t.Y != n.Position.Y);
 
-                        if (p.X < n.X)
+                        if (p.X < n.Position.X)
                         {
                             n.FacingLeft = true;
                         }
@@ -147,7 +145,7 @@ namespace SpaceAdventure
                     }
                     else
                     {
-                        n.SetPosition(n.X, n.Y);
+                        n.SetPosition(n.Position.X, n.Position.Y);
                     }
                 }
             }
@@ -178,7 +176,7 @@ namespace SpaceAdventure
                 int newX = p.XPosition  + p.XVelosity;
                 int newY = p.YPosition + p.YVelosity;
 
-                if (npc.Any(x => x.X == newX && x.Y == newY))
+                if (npc.Any(x => x.Position.X == newX && x.Position.Y == newY))
                 {
                     StatusMessage = "Blowup";
                     Projectiles.Remove(p);
@@ -251,7 +249,7 @@ namespace SpaceAdventure
                 Image image = a.ActorImage;                
 
                 int offset = (ScreenWidth - (MAP_WIDTH * CELL_WIDTH)) / 2;
-                graphic.DrawImage(image, new Point(XUnit(a.X) + offset, YUnit(a.Y)));
+                graphic.DrawImage(image, new Point(XUnit(a.Position.X) + offset, YUnit(a.Position.Y)));
             }
 
             foreach (NPC n in npc)
@@ -259,14 +257,14 @@ namespace SpaceAdventure
                 Image image = n.ActorImage;
 
                 int offset = (ScreenWidth - (MAP_WIDTH * CELL_WIDTH)) / 2;
-                graphic.DrawImage(image, new Point(XUnit(n.X) + offset, YUnit(n.Y)));
+                graphic.DrawImage(image, new Point(XUnit(n.Position.X) + offset, YUnit(n.Position.Y)));
             }
         }
 
         private void DrawPlayer(int xDelta, int yDelta)
         {
-            int newX = hero.X + xDelta;
-            int newY = hero.Y + yDelta;
+            int newX = hero.Position.X + xDelta;
+            int newY = hero.Position.Y + yDelta;
 
             if (map.ValidPoint(newX,newY))
             {
@@ -284,8 +282,7 @@ namespace SpaceAdventure
                 #endregion
                 if ( map.Rows[newY].Columns[newX].IsPassable)
                 {
-                    hero.X = newX;
-                    hero.Y = newY;
+                    hero.Position = new Point(newX,newY);
                 }
             }
         }
@@ -302,7 +299,7 @@ namespace SpaceAdventure
 
         public void ActorFire()
         {
-            Projectiles.Add(new Projectile("oryx_16bit_scifi_FX_sm_151.png",hero.X, hero.Y, 1, 0));
+            Projectiles.Add(new Projectile("oryx_16bit_scifi_FX_sm_151.png",hero.Position.X, hero.Position.Y, 1, 0));
             SoundPlayer sound = new SoundPlayer(SpaceAdventure.Properties.Resources._175267__jonccox__gun_plasma);
             sound.Play();
         }
@@ -367,10 +364,10 @@ namespace SpaceAdventure
 
         private void PickupItem()
         {
-            if (map.Rows[hero.Y].Columns[hero.X].Inventory != ItemNames.Empty)
+            if (map.Rows[hero.Position.Y].Columns[hero.Position.X].Inventory != ItemNames.Empty)
             {
-                hero.Inventory.Add(map.Rows[hero.Y].Columns[hero.X].Inventory);
-                map.Rows[hero.Y].Columns[hero.X].Inventory = ItemNames.Empty;
+                hero.Inventory.Add(map.Rows[hero.Position.Y].Columns[hero.Position.X].Inventory);
+                map.Rows[hero.Position.Y].Columns[hero.Position.X].Inventory = ItemNames.Empty;
             }
         }
 
@@ -419,8 +416,8 @@ namespace SpaceAdventure
         {
             List<Point> pointsWithDoors = new List<Point>();
             //get current position
-            int heroX = hero.X;
-            int heroY = hero.Y;
+            int heroX = hero.Position.X;
+            int heroY = hero.Position.Y;
             //check for doors
 
             Point[] pointsToCheck = new Point[]{

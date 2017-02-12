@@ -11,14 +11,16 @@ namespace SpaceAdventure
     class Actor
     {
         public string Name { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
+        public Point Position { get; set; }
+        //public int X { get; set; }
+        //public int Y { get; set; }
         public bool FacingLeft { get; set; }        
         public Facing Direction { get; set; }
         public ItemNames Equiped { get; set; }
         public List<ItemNames> Inventory;
 
         private int imageNumber;
+        protected Point startPosition;
 
         protected ISpriteImage sprite;
 
@@ -38,12 +40,14 @@ namespace SpaceAdventure
         {            
             Inventory = new List<ItemNames>();     
             imageNumber = 1;
+            
         }
 
-        public Actor(ISpriteImage images)
+        public Actor(ISpriteImage images,Point startingPosition)
             :this()
         {
             sprite = images;
+            this.Position = startingPosition;
         }
 
         public void EquipItem(ItemNames item)

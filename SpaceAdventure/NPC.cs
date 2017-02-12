@@ -9,24 +9,19 @@ namespace SpaceAdventure
 {
     class NPC : Actor
     {
+        Point startPosition;
         Queue<Point> path;
         public Point Goal {get;set;}
         public int Delay = 2;
 
-        //public NPC(IDictionary<int, string> images)
-        //{
-        //    base.image = images;
-        //}
-
-        public NPC(ISpriteImage images)
+        public NPC(ISpriteImage images,Point startingPosition) : base(images,startingPosition)
         {
-            base.sprite = images;
+            
         }
 
         public void SetPosition(int x, int y)
         {
-            base.X = x;
-            base.Y = y;
+            base.Position = new Point(x, y);
         }
 
         public void Update()
