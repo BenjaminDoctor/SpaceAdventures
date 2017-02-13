@@ -8,9 +8,9 @@ using System.Drawing;
 
 using SpaceAdventure.Common;
 
-namespace SpaceAdventure
+namespace SpaceAdventure.World
 {
-    class TileMap
+    public class TileMap
     {
         public List<MapRow> Rows = new List<MapRow>();
         public int MapWidth;

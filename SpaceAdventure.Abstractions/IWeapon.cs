@@ -10,10 +10,10 @@ namespace SpaceAdventure.Abstractions
     public interface IWeapon
     {
         ItemNames Name { get; set; }
-        Object Image { get; set; }
-        Object Attack { get; set; }
-        ISpriteImage<int> CollisionEffect { get; set; }
-        Object Sound { get; set; }
+        IItemSprite Image { get; set; }
+        object Attack { get; set; }
+        IItemSprite CollisionEffect { get; set; }
+        object Sound { get; set; }
         int Range { get; set; }
     }
 }

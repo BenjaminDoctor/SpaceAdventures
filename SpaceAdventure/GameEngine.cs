@@ -10,6 +10,7 @@ using System.Media;
 using SpaceAdventure.Sprite;
 using SpaceAdventure.Common;
 using SpaceAdventure.Abstractions;
+using SpaceAdventure.World;
 
 namespace SpaceAdventure
 {

@@ -7,9 +7,9 @@ using System.Drawing;
 
 using SpaceAdventure.Common;
 
-namespace SpaceAdventure
+namespace SpaceAdventure.World
 {
-    class TileRoom
+    public class TileRoom
     {
         List<MapRow> _room = new List<MapRow>();
         static Random random = new Random();

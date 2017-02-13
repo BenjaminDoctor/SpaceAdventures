@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace SpaceAdventure
+namespace SpaceAdventure.World
 {
     static class Compass
     {

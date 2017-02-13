@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceAdventure
+namespace SpaceAdventure.World
 {
-    class MapRow
+    public class MapRow
     {
         public List<MapCell> Columns = new List<MapCell>();
     }

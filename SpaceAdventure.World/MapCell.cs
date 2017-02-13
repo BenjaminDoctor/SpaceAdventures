@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using SpaceAdventure.Common;
 
 
-namespace SpaceAdventure
+namespace SpaceAdventure.World
 {
-    class MapCell
+    public class MapCell
     {
         public TileNames Tile { get; set; }
         //public List<TileNames> Tiles = new List<TileNames>();

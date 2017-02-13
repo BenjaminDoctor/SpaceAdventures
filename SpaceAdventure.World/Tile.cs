@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceAdventure
+namespace SpaceAdventure.World
 {
-    class Tile
+    public class Tile
     {
         public string TileImage { get; set; }
         public bool IsPassable { get; set; }
@@ -19,7 +19,7 @@ namespace SpaceAdventure
         }
     }
 
-    static class TileList
+    public static class TileList
     {
         static public Dictionary<TileNames, Tile> Tiles;
 
