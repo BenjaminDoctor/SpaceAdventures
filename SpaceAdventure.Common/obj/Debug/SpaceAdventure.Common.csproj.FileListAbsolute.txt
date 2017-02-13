@@ -1,5 +1,0 @@
-C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Common\bin\Debug\SpaceAdventure.Common.dll
-C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Common\bin\Debug\SpaceAdventure.Common.pdb
-C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Common\obj\Debug\SpaceAdventure.Common.dll
-C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Common\obj\Debug\SpaceAdventure.Common.pdb
-C:\Users\BDoctor\Source\Repos\SpaceAdventures\SpaceAdventure.Common\obj\Debug\SpaceAdventure.Common.csprojResolveAssemblyReference.cache
