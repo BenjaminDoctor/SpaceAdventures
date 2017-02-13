@@ -30,7 +30,7 @@ namespace SpaceAdventure
             calculator = new DistanceCalculator();
         }
 
-        public NPC(ISpriteImage images,Point startingPosition) : base(images,startingPosition)
+        public NPC(ISpriteImage<int> images,Point startingPosition) : base(images,startingPosition)
         {
             calculator = new DistanceCalculator();
         }

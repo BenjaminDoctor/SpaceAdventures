@@ -23,11 +23,14 @@ namespace SpaceAdventure
 
         public List<ItemNames> Inventory;
 
-        private ISpriteFactory characterFactory = new FullRowCharacterFactory();
+        private ISpriteFactory<int> characterFactory = new FullRowCharacterFactory<int>();
         private int imageNumber;
+        private IWeapon weapon;
+
         protected Point startPosition;
 
-        protected ISpriteImage sprite;
+
+        protected ISpriteImage<int> sprite;
 
         public Bitmap ActorImage
         {
@@ -55,7 +58,7 @@ namespace SpaceAdventure
             this.Position = startingPosition;
         }
 
-        public Actor(ISpriteImage images,Point startingPosition)
+        public Actor(ISpriteImage<int> images,Point startingPosition)
             :this()
         {
             sprite = images;
@@ -68,6 +71,11 @@ namespace SpaceAdventure
             {
                 Equiped = item;
             }
+        }
+
+        public void Attack()
+        {
+            var attack = weapon.Attack;
         }
 
         public virtual void Update(ref Stopwatch sw)

@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DirectionalEffectsFactory.cs" />
+    <Compile Include="EffectsFactory.cs" />
+    <Compile Include="ItemSprite.cs" />
+    <Compile Include="ItemSpriteFactory.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -50,7 +54,8 @@
     <Compile Include="EffectsLargeSprite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FullRowCharacterFactory.cs" />
-    <Compile Include="SingleFrameSprite.cs" />
+    <Compile Include="SingleFrameDirectionalSprite.cs" />
+    <Compile Include="SpriteImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SpaceAdventure.Abstractions\SpaceAdventure.Abstractions.csproj">

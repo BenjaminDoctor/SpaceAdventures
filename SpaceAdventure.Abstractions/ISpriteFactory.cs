@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SpaceAdventure.Abstractions
 {
-    public interface ISpriteFactory
+    public interface ISpriteFactory<T>
     {
-        ISpriteImage Get(CharacterType sprite, CharacterState state);
-        ISpriteImage Get(CharacterType sprite, ItemNames item);
+        ISpriteImage<T> Get(CharacterType sprite, CharacterState state);
+        ISpriteImage<T> Get(CharacterType sprite, ItemNames item);
     }
 }

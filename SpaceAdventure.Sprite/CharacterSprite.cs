@@ -11,7 +11,7 @@ using SpaceAdventure.Abstractions;
 
 namespace SpaceAdventure.Sprite
 {
-    public class CharacterSprite : ISpriteImage
+    public class CharacterSprite<T> : ISpriteImage<int>
     {
         public IDictionary<int, Bitmap> Images { get; set; }
 

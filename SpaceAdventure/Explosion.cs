@@ -17,13 +17,13 @@ namespace SpaceAdventure
 
         private int imageNumber;
         protected IDictionary<int, string> image;
-        protected ISpriteImage images;
+        protected IItemSprite images;
 
         public Bitmap ExplosionImage
         {
             get
             {
-                imageNumber = (imageNumber % 2);
+                imageNumber = (imageNumber % images.Images.Count);
                 var value = images.Images[imageNumber];
                 imageNumber++;
                 Counter--;
@@ -31,11 +31,11 @@ namespace SpaceAdventure
             }
         }
 
-        public Explosion(ISpriteImage images, Point position)
+        public Explosion(IItemSprite images, Point position)
         {
             Position = position;
             this.images = images;
-            Counter = 6;
+            Counter = images.Images.Count * 2;
         }
     }
 }

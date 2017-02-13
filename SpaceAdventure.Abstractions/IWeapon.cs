@@ -12,7 +12,8 @@ namespace SpaceAdventure.Abstractions
         ItemNames Name { get; set; }
         Object Image { get; set; }
         Object Attack { get; set; }
-        ISpriteImage CollisionEffect { get; set; }
+        ISpriteImage<int> CollisionEffect { get; set; }
         Object Sound { get; set; }
+        int Range { get; set; }
     }
 }

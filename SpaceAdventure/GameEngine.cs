@@ -36,6 +36,8 @@ namespace SpaceAdventure
         List<Projectile> Projectiles;
         IList<Explosion> Explosions;
 
+        EffectsFactory effects;
+
         public GameEngine()
         {
             Init();
@@ -56,6 +58,8 @@ namespace SpaceAdventure
             badguy.Inventory.Add(ItemNames.Rifle);
             badguy.Goal = hero.Position;
             npc.Add(badguy);
+
+            effects = new EffectsFactory();
 
             Projectiles = new List<Projectile>();
             Explosions = new List<Explosion>();
@@ -134,7 +138,7 @@ namespace SpaceAdventure
                 {
                     StatusMessage = "Blowup";
                     Projectiles.Remove(p);
-                    Explosions.Add(new Explosion(new EffectsLargeSprite(10,2), newPosition));
+                    Explosions.Add(new Explosion(effects.Get(Effects.BlackExplosion), newPosition));
                     SoundPlayer sound = new SoundPlayer(SpaceAdventure.Properties.Resources._317748__jalastram__sfx_explosion_03);
                     sound.Play();
                 }
