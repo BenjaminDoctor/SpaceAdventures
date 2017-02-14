@@ -111,6 +111,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Attribution.txt" />
     <Content Include="Images\Hero.gif" />
     <None Include="Images\Hero_Bazooka_1.gif" />
     <None Include="Images\Hero_Bazooka_2.gif" />

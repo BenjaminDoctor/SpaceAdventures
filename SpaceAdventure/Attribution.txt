@@ -1,0 +1,3 @@
+﻿This game uses these sounds from freesound:
+S: SFX_Explosion_03.wav by jalastram -- https://www.freesound.org/s/317748/ -- License: Attribution
+S: Gun_Plasma.wav by jonccox -- https://www.freesound.org/s/175267/ -- License: Attribution
