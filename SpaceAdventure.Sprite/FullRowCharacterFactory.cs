@@ -8,16 +8,16 @@ using SpaceAdventure.Common;
 
 namespace SpaceAdventure.Sprite
 {
-    public class FullRowCharacterFactory<T> : ISpriteFactory<T>
+    public class FullRowCharacterFactory : ISpriteFactory
     {
         private readonly int NumberOfFrames = 2;
 
-        public ISpriteImage<T> Get(CharacterType sprite, CharacterState state)
+        public ISpriteImage Get(CharacterType sprite, CharacterState state)
         {
-            return (ISpriteImage<T>) new CharacterSprite<int>((int)sprite, (int)state * NumberOfFrames);
+            return (ISpriteImage) new CharacterSprite((int)sprite, (int)state * NumberOfFrames);
         }
 
-        public ISpriteImage<T> Get(CharacterType sprite, ItemNames item)
+        public ISpriteImage Get(CharacterType sprite, ItemNames item)
         {
             return this.Get(sprite, convertItemToState(item));
         }

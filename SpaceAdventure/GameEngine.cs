@@ -32,9 +32,9 @@ namespace SpaceAdventure
 
         TileMap map;
         Actor hero;
-        List<Actor> actors = new List<Actor>();
-        List<NPC> npc = new List<NPC>();
-        List<Projectile> Projectiles;
+        IList<Actor> actors = new List<Actor>();
+        IList<NPC> npc = new List<NPC>();
+        IList<Projectile> Projectiles;
         IList<Explosion> Explosions;
 
         EffectsFactory effects;
@@ -49,7 +49,7 @@ namespace SpaceAdventure
         {
             StatusMessage = "Nothing to say";
             
-            hero = new Actor(CharacterType.BlackArmorBlackHelmet, ItemNames.BlueSword, new Point(1, 8));
+            hero = new Actor(CharacterType.BlackArmorBlackHelmet, ItemNames.SubMachineGun, new Point(1, 8));
             hero.FacingLeft = true;
             hero.Inventory.Add(ItemNames.Bazooka);
             actors.Add(hero);
@@ -139,15 +139,14 @@ namespace SpaceAdventure
                 {
                     StatusMessage = "Blowup";
                     Projectiles.Remove(p);
-                    Explosions.Add(new Explosion(effects.Get(Effects.BlackExplosion), newPosition));
-                    SoundPlayer sound = new SoundPlayer(SpaceAdventure.Properties.Resources._317748__jalastram__sfx_explosion_03);
-                    sound.Play();
+                    Explosions.Add(new Explosion((IItemSprite)hero.EquipedWeapon.CollisionEffect, newPosition));
+                    PlaySound(hero.EquipedWeapon.CollisionSound);
                 }
                 else if (newPosition.X > 0 && newPosition.X < MAP_WIDTH - 1 && newPosition.Y > 0 && newPosition.Y < MAP_HEIGHT - 1
                     && map.Rows[newPosition.Y].Columns[newPosition.X].IsPassable)
                 {
                     p.Position = newPosition;
-                    DrawGraphic(ref graphic, p.ImageFile, p.Position.Y, p.Position.X);
+                    DrawImage(ref graphic, p.Image, new Point( p.Position.X, p.Position.Y));
                 }
                 else
                 {
@@ -243,11 +242,19 @@ namespace SpaceAdventure
             }
         }
 
+        private void PlaySound(object sound)
+        {
+            SoundPlayer soundPlayer = new SoundPlayer((System.IO.Stream)sound);
+            soundPlayer.Stream.Position = 0;
+            soundPlayer.Play();
+        }
+
         public void ActorFire()
         {
-            Projectiles.Add(new Projectile("oryx_16bit_scifi_FX_sm_151.png",hero.Position, new Size( 1, 0)));
-            SoundPlayer sound = new SoundPlayer(SpaceAdventure.Properties.Resources._175267__jonccox__gun_plasma);
-            sound.Play();
+            hero.Attack();
+            Projectiles.Add(new Projectile(hero.EquipedWeapon.Attack.Images[Direction.Right], hero.Position, new Size(1, 0)));
+            PlaySound(hero.EquipedWeapon.AttackSound);
+            
         }
 
         public void MoveActor(object direction)

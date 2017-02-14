@@ -15,7 +15,7 @@ namespace SpaceAdventure.Common
         Sword,
         Bazooka,
         Flamethrower,
-        SubmachineGun,
+        SubMachineGun,
         PistolAndShield,
         PistolAndRedFlag,
         PistolAndBlueFlag,

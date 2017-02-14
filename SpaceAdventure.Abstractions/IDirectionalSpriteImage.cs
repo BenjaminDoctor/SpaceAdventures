@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpaceAdventure.Common;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -7,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace SpaceAdventure.Abstractions
 {
-    public interface IItemSprite : ISpriteImage
+    public interface IDirectionalSpriteImage : ISpriteImage
     {
-        IDictionary<int, Bitmap> Images { get; }
+        IDictionary<Direction, Bitmap> Images { get;  }
     }
 }

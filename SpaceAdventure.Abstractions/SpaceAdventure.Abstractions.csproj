@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDirectionalSpriteImage.cs" />
     <Compile Include="IDistanceCalculator.cs" />
+    <Compile Include="IIntergerSpriteImage.cs" />
     <Compile Include="IItemSprite.cs" />
     <Compile Include="ISpriteFactory.cs" />
     <Compile Include="ISpriteImage.cs" />

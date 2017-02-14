@@ -1,4 +1,5 @@
-﻿using SpaceAdventure.Common;
+﻿using SpaceAdventure.Abstractions;
+using SpaceAdventure.Common;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,24 +9,29 @@ using System.Threading.Tasks;
 
 namespace SpaceAdventure.Sprite
 {
-    public class DirectionalEffectsFactory<T>
+    public class DirectionalEffectsFactory
     {
-        IDictionary<Effects, Lazy<SingleFrameDirectionalSprite<Direction>>> lookup;
+        IDictionary<Effects, Lazy<IDirectionalSpriteImage>> lookup;
         Bitmap spriteSheet = Properties.Resources.FX_Small;
         Size size = new Size(24, 24);
 
         public DirectionalEffectsFactory()
         {
-            lookup = new Dictionary<Effects, Lazy<SingleFrameDirectionalSprite<Direction>>>();
+            lookup = new Dictionary<Effects, Lazy<IDirectionalSpriteImage>> ();
 
-            lookup.Add(Effects.RedProjectile, new Lazy<SingleFrameDirectionalSprite<Direction>>(() => new SingleFrameDirectionalSprite<Direction>(spriteSheet, 0, 0, size, 2)));
-            lookup.Add(Effects.BlueProjectile, new Lazy<SingleFrameDirectionalSprite<Direction>>(() => new SingleFrameDirectionalSprite<Direction>(spriteSheet, 0, 0, size, 2)));
-            lookup.Add(Effects.WhiteProjectile, new Lazy<SingleFrameDirectionalSprite<Direction>>(() => new SingleFrameDirectionalSprite<Direction>(spriteSheet, 0, 0, size, 2)));
-            lookup.Add(Effects.PurpleProjectile, new Lazy<SingleFrameDirectionalSprite<Direction>>(() => new SingleFrameDirectionalSprite<Direction>(spriteSheet, 0, 0, size, 2)));
-            lookup.Add(Effects.BlackProjectile, new Lazy<SingleFrameDirectionalSprite<Direction>>(() => new SingleFrameDirectionalSprite<Direction>(spriteSheet, 0, 0, size, 2)));
-            lookup.Add(Effects.GreenProjectile, new Lazy<SingleFrameDirectionalSprite<Direction>>(() => new SingleFrameDirectionalSprite<Direction>(spriteSheet, 0, 0, size, 2)));
-            lookup.Add(Effects.IceProjectile, new Lazy<SingleFrameDirectionalSprite<Direction>>(() => new SingleFrameDirectionalSprite<Direction>(spriteSheet, 0, 0, size, 2)));
-            lookup.Add(Effects.LavaProjectilve, new Lazy<SingleFrameDirectionalSprite<Direction>>(() => new SingleFrameDirectionalSprite<Direction>(spriteSheet, 0, 0, size, 2)));
+            lookup.Add(Effects.RedProjectile, new Lazy<IDirectionalSpriteImage>(() => new SingleFrameDirectionalSprite(spriteSheet, 11, 0, size, 2)));
+            lookup.Add(Effects.BlueProjectile, new Lazy<IDirectionalSpriteImage>(() => new SingleFrameDirectionalSprite(spriteSheet, 12, 0, size, 2)));
+            lookup.Add(Effects.WhiteProjectile, new Lazy<IDirectionalSpriteImage>(() => new SingleFrameDirectionalSprite(spriteSheet, 13, 0, size, 2)));
+            lookup.Add(Effects.PurpleProjectile, new Lazy<IDirectionalSpriteImage>(() => new SingleFrameDirectionalSprite(spriteSheet, 14, 0, size, 2)));
+            lookup.Add(Effects.BlackProjectile, new Lazy<IDirectionalSpriteImage>(() => new SingleFrameDirectionalSprite(spriteSheet, 15, 0, size, 2)));
+            lookup.Add(Effects.GreenProjectile, new Lazy<IDirectionalSpriteImage>(() => new SingleFrameDirectionalSprite(spriteSheet, 16, 0, size, 2)));
+            lookup.Add(Effects.IceProjectile, new Lazy<IDirectionalSpriteImage>(() => new SingleFrameDirectionalSprite(spriteSheet, 16, 0, size, 2)));
+            lookup.Add(Effects.LavaProjectilve, new Lazy<IDirectionalSpriteImage>(() => new SingleFrameDirectionalSprite(spriteSheet, 18, 0, size, 2)));
+        }
+
+        public ISpriteImage Get(Effects effect)
+        {
+            return (ISpriteImage) lookup[effect].Value;
         }
 
     }

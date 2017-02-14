@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpaceAdventure.Abstractions
 {
-    public interface IItemSprite : ISpriteImage
+    public interface IIntergerSpriteImage : ISpriteImage
     {
         IDictionary<int, Bitmap> Images { get; }
     }

@@ -1,4 +1,5 @@
-﻿using SpaceAdventure.Common;
+﻿using SpaceAdventure.Abstractions;
+using SpaceAdventure.Common;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SpaceAdventure.Sprite
 {
-    public class SingleFrameDirectionalSprite<T>
+    public class SingleFrameDirectionalSprite : IDirectionalSpriteImage
     {
         public IDictionary<Direction, Bitmap> Images { get; private set; }
 
@@ -18,7 +19,6 @@ namespace SpaceAdventure.Sprite
 
         public SingleFrameDirectionalSprite(Bitmap spriteSheet, int row, int column, Size frameSize, int frameCount )
         {
-            if (!typeof(T).Equals(typeof(Direction))) throw new ArgumentException("Invalid type");
             this.spriteSheet = spriteSheet;
             this.frameSize = frameSize;
 

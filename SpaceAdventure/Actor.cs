@@ -20,17 +20,18 @@ namespace SpaceAdventure
         public Direction Direction { get; set; }
         public ItemNames Equiped { get; set; }
         public CharacterType Character { get; private set; }
+        public IWeapon EquipedWeapon { get; set; }
 
         public List<ItemNames> Inventory;
 
-        private ISpriteFactory<int> characterFactory = new FullRowCharacterFactory<int>();
+        private ISpriteFactory characterFactory = new FullRowCharacterFactory();
+        private WeaponFactory weaponFactory = new WeaponFactory();
         private int imageNumber;
-        private IWeapon weapon;
 
         protected Point startPosition;
 
 
-        protected ISpriteImage<int> sprite;
+        protected IIntergerSpriteImage sprite;
 
         public Bitmap ActorImage
         {
@@ -54,14 +55,16 @@ namespace SpaceAdventure
         public Actor(CharacterType character, ItemNames equipedItem, Point startingPosition) 
             : this()
         {
-            sprite = characterFactory.Get(character, equipedItem);
+            sprite = (IIntergerSpriteImage)characterFactory.Get(character, equipedItem);
             this.Position = startingPosition;
+            this.Equiped = equipedItem;
+            this.startPosition = startingPosition;
         }
 
-        public Actor(ISpriteImage<int> images,Point startingPosition)
+        public Actor(ISpriteImage images,Point startingPosition)
             :this()
         {
-            sprite = images;
+            sprite = (IIntergerSpriteImage)images;
             this.Position = startingPosition;
         }
 
@@ -75,7 +78,18 @@ namespace SpaceAdventure
 
         public void Attack()
         {
-            var attack = weapon.Attack;
+            if (this.EquipedWeapon == null) equipWeapon();
+            var attack = EquipedWeapon.Attack;
+        }
+
+        private void equipWeapon()
+        {
+            this.EquipedWeapon = weaponFactory.Get(convertItemToWeapon());
+        }
+
+        private WeaponType convertItemToWeapon()
+        {
+            return (WeaponType)Enum.Parse(typeof(WeaponType), Equiped.ToString());
         }
 
         public virtual void Update(ref Stopwatch sw)

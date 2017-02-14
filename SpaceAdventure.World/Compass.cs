@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using SpaceAdventure.Common;
 
 namespace SpaceAdventure.World
 {
@@ -19,12 +20,5 @@ namespace SpaceAdventure.World
             CompassDirections.Add(Direction.Left, new Point(1,0));
             CompassDirections.Add(Direction.Right, new Point(-1,0));
         }
-    }
-
-    enum Direction {
-        Up,
-        Down,
-        Left,
-        Right 
     }
 }
