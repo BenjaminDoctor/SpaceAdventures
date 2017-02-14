@@ -55,10 +55,12 @@ namespace SpaceAdventure
         public Actor(CharacterType character, ItemNames equipedItem, Point startingPosition) 
             : this()
         {
-            sprite = (IIntergerSpriteImage)characterFactory.Get(character, equipedItem);
-            this.Position = startingPosition;
             this.Equiped = equipedItem;
             this.Inventory.Add(equipedItem);
+            this.Character = character;
+            sprite = (IIntergerSpriteImage)characterFactory.Get(character, equipedItem);
+            this.Position = startingPosition;
+            
             this.startPosition = startingPosition;
         }
 

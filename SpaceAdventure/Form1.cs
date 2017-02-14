@@ -17,7 +17,7 @@ namespace SpaceAdventure
 
         public Form1()
         {
-            //this.SetStyle(ControlStyles.AllPaintingInWmPaint ,true);
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint ,true);
             this.DoubleBuffered = true;
             
             InitializeComponent();                    
