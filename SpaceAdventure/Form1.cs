@@ -17,8 +17,9 @@ namespace SpaceAdventure
 
         public Form1()
         {
-            this.SetStyle(ControlStyles.AllPaintingInWmPaint ,true);
+            //this.SetStyle(ControlStyles.AllPaintingInWmPaint ,true);
             this.DoubleBuffered = true;
+            
             InitializeComponent();                    
         }
 
@@ -31,7 +32,7 @@ namespace SpaceAdventure
 
             game = new GameEngine();
             game.ScreenWidth = this.Size.Width;
-            lbInventory.DataSource = game.GetInventory();            
+            cbInventory.DataSource = game.GetInventory();            
         }
 
         private void  MoveActor(Action<object> action, object parameter)
@@ -99,16 +100,31 @@ namespace SpaceAdventure
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            
+        }
+
+        private void cbInventory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (sender != null)
+            {
+                var equippedItem = cbInventory.SelectedItem.ToString();
+                game.ChangeEquippedItem(equippedItem);
+            }
+                
+        }
+
+        private void gameScreen_Paint(object sender, PaintEventArgs e)
+        {
             Graphics g = e.Graphics;
             if (game != null)
             {
                 game.GameLoop(ref g);
                 lblMessage.Text = game.StatusMessage;
                 lblMessage.Refresh();
-                lbInventory.DataSource = game.GetInventory();
-                lbInventory.Refresh();
-                this.Invalidate();
-                lblMessage.Focus();
+                //cbInventory.DataSource = game.GetInventory();
+                //cbInventory.Refresh();
+                this.gameScreen.Invalidate();
+                //lblMessage.Focus();
             }
             else
             {
@@ -117,6 +133,12 @@ namespace SpaceAdventure
                 this.Refresh();
             }
         }
-       
+
+        private void Form1_DragDrop(object sender, DragEventArgs e)
+        {
+            //this.Invalidate();            
+            //this.Refresh();
+            //this.gameScreen.Refresh();
+        }
     }
 }

@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbInventory = new System.Windows.Forms.ComboBox();
             this.btnFire = new System.Windows.Forms.Button();
-            this.lbInventory = new System.Windows.Forms.ListBox();
             this.lblMessage = new System.Windows.Forms.Label();
             this.btnLeft = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnRight = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
+            this.gameScreen = new SpaceAdventure.DoubleBufferedPanel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbInventory);
             this.groupBox1.Controls.Add(this.btnFire);
-            this.groupBox1.Controls.Add(this.lbInventory);
             this.groupBox1.Controls.Add(this.lblMessage);
             this.groupBox1.Controls.Add(this.btnLeft);
             this.groupBox1.Controls.Add(this.btnStart);
@@ -58,6 +58,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // cbInventory
+            // 
+            this.cbInventory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbInventory.FormattingEnabled = true;
+            this.cbInventory.Location = new System.Drawing.Point(476, 27);
+            this.cbInventory.Name = "cbInventory";
+            this.cbInventory.Size = new System.Drawing.Size(338, 21);
+            this.cbInventory.TabIndex = 10;
+            this.cbInventory.SelectedIndexChanged += new System.EventHandler(this.cbInventory_SelectedIndexChanged);
+            // 
             // btnFire
             // 
             this.btnFire.Location = new System.Drawing.Point(531, 257);
@@ -66,14 +76,6 @@
             this.btnFire.TabIndex = 9;
             this.btnFire.Text = "Fire";
             this.btnFire.UseVisualStyleBackColor = true;
-            // 
-            // lbInventory
-            // 
-            this.lbInventory.FormattingEnabled = true;
-            this.lbInventory.Location = new System.Drawing.Point(432, 24);
-            this.lbInventory.Name = "lbInventory";
-            this.lbInventory.Size = new System.Drawing.Size(384, 212);
-            this.lbInventory.TabIndex = 8;
             // 
             // lblMessage
             // 
@@ -133,16 +135,26 @@
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
+            // gameScreen
+            // 
+            this.gameScreen.BackgroundImage = global::SpaceAdventure.Properties.Resources.iss006e40544;
+            this.gameScreen.Location = new System.Drawing.Point(0, 0);
+            this.gameScreen.Name = "gameScreen";
+            this.gameScreen.Size = new System.Drawing.Size(840, 306);
+            this.gameScreen.TabIndex = 8;
+            this.gameScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.gameScreen_Paint);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(841, 626);
+            this.Controls.Add(this.gameScreen);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Space Adventurer";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -158,8 +170,9 @@
         private System.Windows.Forms.Button btnRight;
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnUp;
-        private System.Windows.Forms.ListBox lbInventory;
         private System.Windows.Forms.Button btnFire;
+        private System.Windows.Forms.ComboBox cbInventory;
+        private DoubleBufferedPanel gameScreen;
     }
 }
 

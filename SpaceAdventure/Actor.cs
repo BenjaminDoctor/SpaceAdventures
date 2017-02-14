@@ -58,6 +58,7 @@ namespace SpaceAdventure
             sprite = (IIntergerSpriteImage)characterFactory.Get(character, equipedItem);
             this.Position = startingPosition;
             this.Equiped = equipedItem;
+            this.Inventory.Add(equipedItem);
             this.startPosition = startingPosition;
         }
 
@@ -72,6 +73,9 @@ namespace SpaceAdventure
         {
             if (Inventory.Contains(item))
             {
+                Equiped = item;
+                EquipedWeapon = weaponFactory.Get((WeaponType)Enum.Parse(typeof(WeaponType), item.ToString()));
+                sprite = (IIntergerSpriteImage)characterFactory.Get(Character, Equiped);
                 Equiped = item;
             }
         }

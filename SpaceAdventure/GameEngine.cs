@@ -38,6 +38,7 @@ namespace SpaceAdventure
         IList<Explosion> Explosions;
 
         EffectsFactory effects;
+        WeaponFactory weaponFactory;
 
         public GameEngine()
         {
@@ -52,6 +53,8 @@ namespace SpaceAdventure
             hero = new Actor(CharacterType.BlackArmorBlackHelmet, ItemNames.SubMachineGun, new Point(1, 8));
             hero.FacingLeft = true;
             hero.Inventory.Add(ItemNames.Bazooka);
+            hero.Inventory.Add(ItemNames.Flamethrower);
+            hero.Inventory.Add(ItemNames.BlueSword);
             actors.Add(hero);
 
             NPC badguy = new NPC(CharacterType.GreenArmorBrownVisor, ItemNames.Flamethrower, new Point(10,8));
@@ -61,6 +64,7 @@ namespace SpaceAdventure
             npc.Add(badguy);
 
             effects = new EffectsFactory();
+            weaponFactory = new WeaponFactory();
 
             Projectiles = new List<Projectile>();
             Explosions = new List<Explosion>();
@@ -255,6 +259,11 @@ namespace SpaceAdventure
             Projectiles.Add(new Projectile(hero.EquipedWeapon.Attack.Images[Direction.Right], hero.Position, new Size(1, 0)));
             PlaySound(hero.EquipedWeapon.AttackSound);
             
+        }
+
+        public void ChangeEquippedItem(string newEquippedItem)
+        {
+            hero.EquipItem((ItemNames)Enum.Parse(typeof(ItemNames), newEquippedItem));
         }
 
         public void MoveActor(object direction)
