@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 using SpaceAdventure.Common;
+using SpaceAdventure.Common.Enums;
 
 namespace SpaceAdventure.World
 {

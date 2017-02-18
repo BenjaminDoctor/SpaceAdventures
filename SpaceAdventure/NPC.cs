@@ -7,6 +7,7 @@ using System.Drawing;
 
 using SpaceAdventure.Abstractions;
 using SpaceAdventure.Common;
+using SpaceAdventure.Common.Enums;
 
 namespace SpaceAdventure
 {

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using SpaceAdventure.Abstractions;
 using SpaceAdventure.Common;
 using SpaceAdventure.Sprite;
+using SpaceAdventure.Common.Enums;
 
 namespace SpaceAdventure
 {

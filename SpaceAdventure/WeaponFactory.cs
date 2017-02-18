@@ -1,5 +1,6 @@
 ﻿using SpaceAdventure.Abstractions;
 using SpaceAdventure.Common;
+using SpaceAdventure.Common.Enums;
 using SpaceAdventure.Sprite;
 using System;
 using System.Collections.Generic;

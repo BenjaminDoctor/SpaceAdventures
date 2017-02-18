@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Media;
 
+using TiledSharp;
+
 using SpaceAdventure.Sprite;
 using SpaceAdventure.Common;
 using SpaceAdventure.Abstractions;
 using SpaceAdventure.World;
+using System.IO;
+using SpaceAdventure.Common.Enums;
 
 namespace SpaceAdventure
 {
@@ -31,6 +35,8 @@ namespace SpaceAdventure
         long interval = 1000;
 
         TileMap map;
+        TmxMap tmxMap;
+        TmxTileset myTileset;
         Actor hero;
         IList<Actor> actors = new List<Actor>();
         IList<NPC> npc = new List<NPC>();
@@ -72,7 +78,10 @@ namespace SpaceAdventure
 
         private void CreateMap()
         {
-            map = new TileMap(MAP_WIDTH,MAP_HEIGHT );
+            //map = new TileMap(MAP_WIDTH,MAP_HEIGHT );
+            tmxMap = new TmxMap("Ship1.tmx");
+            myTileset = tmxMap.Tilesets[0];
+
         }
 
         public void GameLoop(ref Graphics graphic)
@@ -186,20 +195,58 @@ namespace SpaceAdventure
                 {
                     MapCell mc = map.Rows[r].Columns[c];
 
-                    foreach (TileNames tile in mc.Tiles.Values )
+                    foreach (TileNames tile in mc.Tiles.Values)
                     {
                         Tile t = TileList.Tiles[tile];
                         DrawGraphic(ref graphic, t.TileImage, r, c);
                     }
 
-                    if (mc.Inventory != ItemNames.Empty  )
+                    if (mc.Inventory != ItemNames.Empty)
                     {
                         Item item = ItemList.Items[mc.Inventory];
-                        DrawGraphic(ref graphic, ItemList.Items[mc.Inventory].ItemImage,r, c);
+                        DrawGraphic(ref graphic, ItemList.Items[mc.Inventory].ItemImage, r, c);
                     }
                 }
             }
         }
+
+        //private void DrawMap(ref Graphics graphic)
+        //{
+        //    foreach (var a in tmxMap.Layers)
+        //    {
+        //        foreach (var tile in a.Tiles)
+        //        {
+        //            MemoryStream memoryStream = new MemoryStream();
+        //            var texture = myTileset.Image;
+        //            texture.SaveAsJpeg(memoryStream, texture.Width, texture.Height); //Or SaveAsPng( memoryStream, texture.Width, texture.Height )
+
+        //            System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(memoryStream);
+
+        //            DrawImage(ref graphic,myTileset.Image,new Point(1,1));
+                    
+        //            graphic.DrawImage()
+        //        }
+        //    }
+        //    //for (int r = 0; r < MAP_HEIGHT && r < tmxMap.Rows.Count(); r++)
+        //    //{
+        //    //    for (int c = 0; c < MAP_WIDTH && c < map.Rows[r].Columns.Count(); c++)
+        //    //    {
+        //    //        MapCell mc = map.Rows[r].Columns[c];
+
+        //    //        foreach (TileNames tile in mc.Tiles.Values)
+        //    //        {
+        //    //            Tile t = TileList.Tiles[tile];
+        //    //            DrawGraphic(ref graphic, t.TileImage, r, c);
+        //    //        }
+
+        //    //        if (mc.Inventory != ItemNames.Empty)
+        //    //        {
+        //    //            Item item = ItemList.Items[mc.Inventory];
+        //    //            DrawGraphic(ref graphic, ItemList.Items[mc.Inventory].ItemImage, r, c);
+        //    //        }
+        //    //    }
+        //    //}
+        //}
 
         private void DrawCharacters(ref Graphics graphic)
         {

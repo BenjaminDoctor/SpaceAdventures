@@ -93,9 +93,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\TiledSharp\TiledSharp\TiledSharp.csproj">
+      <Project>{e4130f8d-d301-4e0c-916d-489c4a23c9b1}</Project>
+      <Name>TiledSharp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SpaceAdventure.Abstractions\SpaceAdventure.Abstractions.csproj">
       <Project>{b70b8fba-3122-431d-a8ef-cb47b2bb8004}</Project>
       <Name>SpaceAdventure.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpaceAdventure.Common.Enums\SpaceAdventure.Common.Enums.csproj">
+      <Project>{3DCE203A-7266-4E52-B58A-447A2C3FB208}</Project>
+      <Name>SpaceAdventure.Common.Enums</Name>
     </ProjectReference>
     <ProjectReference Include="..\SpaceAdventure.Common\SpaceAdventure.Common.csproj">
       <Project>{a3578508-fdeb-4427-bce6-d0733d4dcb45}</Project>
