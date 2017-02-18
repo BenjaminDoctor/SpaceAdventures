@@ -47,13 +47,14 @@
     <Compile Include="IItemSprite.cs" />
     <Compile Include="ISpriteFactory.cs" />
     <Compile Include="ISpriteImage.cs" />
+    <Compile Include="ISpriteSheetReader.cs" />
     <Compile Include="IWeapon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SpaceAdventure.Common\SpaceAdventure.Common.csproj">
-      <Project>{a3578508-fdeb-4427-bce6-d0733d4dcb45}</Project>
-      <Name>SpaceAdventure.Common</Name>
+    <ProjectReference Include="..\SpaceAdventure.Common.Enums\SpaceAdventure.Common.Enums.csproj">
+      <Project>{3dce203a-7266-4e52-b58a-447a2c3fb208}</Project>
+      <Name>SpaceAdventure.Common.Enums</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

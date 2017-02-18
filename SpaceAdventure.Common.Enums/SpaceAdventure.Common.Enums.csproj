@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A3578508-FDEB-4427-BCE6-D0733D4DCB45}</ProjectGuid>
+    <ProjectGuid>{3DCE203A-7266-4E52-B58A-447A2C3FB208}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SpaceAdventure.Common</RootNamespace>
-    <AssemblyName>SpaceAdventure.Common</AssemblyName>
+    <RootNamespace>SpaceAdventure.Common.Enums</RootNamespace>
+    <AssemblyName>SpaceAdventure.Common.Enums</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,18 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SpriteSheetReader.cs" />
+    <Compile Include="CharacterState.cs" />
+    <Compile Include="CharacterType.cs" />
+    <Compile Include="Direction.cs" />
+    <Compile Include="Effects.cs" />
+    <Compile Include="ItemNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SpaceAdventure.Abstractions\SpaceAdventure.Abstractions.csproj">
-      <Project>{b70b8fba-3122-431d-a8ef-cb47b2bb8004}</Project>
-      <Name>SpaceAdventure.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SpaceAdventure.Common.Enums\SpaceAdventure.Common.Enums.csproj">
-      <Project>{3dce203a-7266-4e52-b58a-447a2c3fb208}</Project>
-      <Name>SpaceAdventure.Common.Enums</Name>
-    </ProjectReference>
+    <Compile Include="TileNames.cs" />
+    <Compile Include="WeaponType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

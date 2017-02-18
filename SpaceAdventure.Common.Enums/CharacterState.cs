@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceAdventure.Common
+namespace SpaceAdventure.Common.Enums
 {
-    public enum WeaponType
+    public enum CharacterState 
     {
         NoWeapon,
         Rifle,
@@ -15,14 +15,14 @@ namespace SpaceAdventure.Common
         Sword,
         Bazooka,
         Flamethrower,
-        SubMachineGun,
+        SubmachineGun,
         PistolAndShield,
         PistolAndRedFlag,
         PistolAndBlueFlag,
         BlueSword,
         RedSword,
-        NoWeaponBlue,
-        NoWeaponGrey,
-        NoWeaponRed
-    }
+        Blue,
+        Grey,
+        Red,
+    };
 }
